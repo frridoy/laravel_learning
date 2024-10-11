@@ -41,7 +41,8 @@
                     <th>Department</th>
                     <th>City</th>
                     <th>Age</th>
-                    <th>View</th>
+                    <th>Action</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +58,13 @@
                             <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-sm btn-primary">
                                 Show
                             </a>
+                            <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                    Destroy
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

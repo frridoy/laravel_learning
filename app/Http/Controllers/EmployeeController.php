@@ -89,7 +89,8 @@ class EmployeeController extends Controller
     public function show(string $id)
 
     {
-        $employee = DB::table('employees')->where('id', $id)->first();
+        // $employee = DB::table('employees')->where('id', $id)->first();
+        $employee = DB::table('employees')->find($id);
         return view('employee.show', compact('employee'));
     }
 
@@ -113,7 +114,21 @@ class EmployeeController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
+
     {
-        //
+
+        // dd($id);
+        
+        $employee = DB::table('employees')->where('id', $id)->delete();
+
+        return redirect()->back();
+
+
+        // $employee = Employee::find($id);
+        // if( $employee){
+        //     $employee->delete();
+        // }
+
+
     }
 }
