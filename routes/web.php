@@ -3,6 +3,8 @@
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,11 @@ Route::resource('cities', CityController::class);
 
 Route::resource('students', StudentController::class);
 
+
+Route::resource('teachers', TeacherController::class);
+
+
+Route::get('/union',[TestController::class, 'viewAll'])->name('union');
 
 
 

@@ -6,5 +6,10 @@
 <a href="{{route('cities.create')}}"> Add City</a> <br> <br>
 <a href="{{route('cities.index')}}"> City List </a> <br> <br>
 
-<a href="{{route('students.create')}}"> ADD Student</a> <br> <br>
+<a href="{{route('students.create')}}"> Add Student</a> <br> <br>
 <a href="{{route('students.index')}}"> Students List</a> <br> <br>
+
+<a href="{{route('teachers.create')}}"> Add Teachers</a> <br> <br>
+<a href="{{route('teachers.index')}}"> Teachers List</a> <br> <br>
+
+<a href="{{route('union')}}"> View Teacher & Student Info (Union) </a>
