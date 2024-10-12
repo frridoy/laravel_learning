@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>City List</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -51,6 +51,9 @@
     @else
         <h5 class="mt-4 text-danger text-center">Not Found!</h5>
     @endif
+    <div class="mt-5">
+     {{$cities->links()}}
+    </div>
 </div>
 
 <!-- Bootstrap JS and dependencies -->

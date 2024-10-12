@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = DB::table('students')
-            ->join('cities', 'students.city_id', '=', 'cities.id')
+            ->leftJoin('cities', 'students.city_id', '=', 'cities.id')
             ->select('students.*' , 'cities.city_name')
             // ->where('students.stu_name', '=' , 'Humayon Mia')
             // ->where('cities.city_name', '=' , 'Khulna')

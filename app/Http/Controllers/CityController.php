@@ -13,8 +13,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = DB::table('cities')->get();
-        return view('city.index', compact('cities'));
+        $cities = DB::table('cities')->paginate(2);
+        return view('city.index', compact('cities', 'count'));
     }
 
     /**
