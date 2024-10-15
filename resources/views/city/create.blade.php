@@ -45,7 +45,7 @@
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 4px;s
             cursor: pointer;
             font-size: 16px;
         }

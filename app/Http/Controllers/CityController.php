@@ -41,6 +41,7 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      */
+    
     public function show(City $city)
     {
         //
