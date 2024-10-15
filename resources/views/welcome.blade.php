@@ -12,4 +12,11 @@
 <a href="{{route('teachers.create')}}"> Add Teachers</a> <br> <br>
 <a href="{{route('teachers.index')}}"> Teachers List</a> <br> <br>
 
+
+<a href="{{route('authors.index')}}"> Author List</a> <br> <br>
+<a href="{{route('authors.create')}}">  Add Author </a> <br> <br>
+
+<a href="{{route('biographies.index')}}"> Biography List</a> <br> <br>
+<a href="{{route('biographies.create')}}">  Add Biography </a> <br> <br>
+
 <a href="{{route('union')}}"> View Teacher & Student Info (Union) </a>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BiographyController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\StudentController;
@@ -30,6 +32,10 @@ Route::resource('students', StudentController::class);
 
 
 Route::resource('teachers', TeacherController::class);
+
+Route::resource('authors', AuthorController::class);
+
+Route::resource('biographies', BiographyController::class);
 
 
 Route::get('/union',[TestController::class, 'viewAll'])->name('union');
