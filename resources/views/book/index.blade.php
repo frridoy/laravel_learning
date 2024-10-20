@@ -64,7 +64,6 @@
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->date }}</td>
                     <td>{{ $book->student->stu_name ?? 'N/A' }}</td>                
-
                 </tr>
             @endforeach
        @else

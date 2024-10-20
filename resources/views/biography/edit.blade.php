@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Add Biography</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Edit Biography</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
             margin: 20px;
         }
-
         h1 {
             text-align: center;
             color: #007BFF;
@@ -33,7 +31,6 @@
         }
 
         input[type="text"],
-        input[type="email"],
         select {
             width: 100%;
             padding: 10px;
@@ -71,48 +68,33 @@
             text-align: center;
             margin-bottom: 20px;
         }
-
-        .invalid-feedback {
-            color: red;
-            font-size: 0.8rem;
-        }
     </style>
 </head>
-
 <body>
-    <h1>Add Biography</h1>
+    <h1>Edit Biography</h1>
     @if(session('success'))
-    <p class="success-message">{{ session('success') }}</p>
+        <p class="success-message">{{ session('success') }}</p>
     @endif
-    <form action="{{ route('biographies.store') }}" method="POST">
+    <form action="{{ route('biographies.update', $biography->id) }}" method="POST">
         @csrf
+        @method('PUT') 
+        
         <label for="content">Biography Content:</label>
-        <input type="text" name="content" id="content" value="{{old('content')}}"
-            class="form-control @error('content')is-invalid @enderror">
-        @error('content')
-        <p class="invalid-feedback"> {{ $message }} </p>
-        @enderror
+        <input type="text" value="{{ $biography->content }}" name="content" id="content" required>
 
-        <select name="author_id" id="author_id" class="form-control @error('author_id')is-invalid @enderror">
+        <label for="author_id">Author:</label>
+        <select name="author_id" id="author_id">
+            <option value="" disabled>Select Author</option>
 
-            <option value="" disabled selected>Select Author</option>
-            @if($authors->isNotEmpty())
             @foreach($authors as $author)
-            <option value="{{ $author->id }}">{{ $author->id }}. {{ $author->author_name }}</option>
+                <option value="{{ $author->id }}" {{ $author->id == $biography->author_id ? 'selected' : '' }}>
+                    {{ $author->id }}. {{ $author->author_name }}
+                </option>
             @endforeach
-            @else
-            <option value="" disabled>No authors available</option>
-            @endif
-
+            
         </select>
 
-        @error('author_id')
-        <p class="invalid-feedback mb-5">{{ $message }}</p>
-        @enderror
-
-
-        <button type="submit">Add Biography</button>
+        <button type="submit">Update Biography</button>
     </form>
 </body>
-
 </html>

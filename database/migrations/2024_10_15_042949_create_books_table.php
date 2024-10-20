@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('date');
             $table->foreignId('stu_id');
-            $table->foreign('stu_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('stu_id')
+                ->references('id')
+                ->on('students')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class BookController extends Controller
 
     public function index()
     {
-        $books = Book::with('student:id,stu_name')->get(); // Ensure only stu_name is loaded
+        $books = Book::with('student: id, stu_name')->get(); 
         return view('book.index', compact('books'));
     }
 
